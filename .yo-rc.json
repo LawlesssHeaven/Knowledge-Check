@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "main"
+    },
+    "jhipsterVersion": "5.3.4",
+    "applicationType": "monolith",
+    "baseName": "KnowledgeCheck",
+    "packageName": "main",
+    "packageFolder": "main",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "Yzk4ZmE4NzAxNGUwMjcxNjRmNjY3YTdkNmNmZDUxOTljZmYzMGY3NzI4ODFhNjhlZThjYTI3ZmI4ZjU4MmQxNDllOTcyY2FjNTA2ZGNmNjQ4MDVkNGFlNThjZWJiOGIxYTU3YzMwOGFmNWM2YWFkNTUzMmU3MzZhMzgxY2IwMTM=",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
