@@ -1,0 +1,18 @@
+entity Tests {
+	testTitle String
+}
+entity Questions {
+	testQuestions String
+}
+entity Answers {
+	testAnswer String ,
+    correct Boolean
+}
+
+relationship OneToMany {
+	Tests{questions} to Questions
+}
+relationship OneToMany {
+	Questions{answers} to Answers
+}
+

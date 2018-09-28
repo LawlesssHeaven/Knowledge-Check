@@ -1,0 +1,30 @@
+{
+    "name": "Answers",
+    "fields": [
+        {
+            "fieldName": "testAnswer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "correct",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "questions",
+            "otherEntityName": "questions",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180928170912",
+    "entityTableName": "answers",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

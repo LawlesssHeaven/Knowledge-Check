@@ -1,0 +1,26 @@
+{
+    "name": "Tests",
+    "fields": [
+        {
+            "fieldName": "testTitle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "questions",
+            "otherEntityName": "questions",
+            "otherEntityRelationshipName": "tests"
+        }
+    ],
+    "changelogDate": "20180928170910",
+    "entityTableName": "tests",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

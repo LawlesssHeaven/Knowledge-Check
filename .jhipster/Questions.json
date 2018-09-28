@@ -1,0 +1,32 @@
+{
+    "name": "Questions",
+    "fields": [
+        {
+            "fieldName": "testQuestions",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "tests",
+            "otherEntityName": "tests",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "answers",
+            "otherEntityName": "answers",
+            "otherEntityRelationshipName": "questions"
+        }
+    ],
+    "changelogDate": "20180928170911",
+    "entityTableName": "questions",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
