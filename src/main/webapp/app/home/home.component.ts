@@ -48,6 +48,8 @@ export class HomeComponent implements OnInit {
         return this.principal.isAuthenticated();
     }
 
+    // Custom login for user, different to navbar
+
     login() {
         this.loginService
             .login({
