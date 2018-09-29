@@ -37,9 +37,16 @@ export class HomeComponent implements OnInit {
     }
 
     registerAuthenticationSuccess() {
-        this.eventManager.subscribe('authenticationSuccess', message => {
-            this.principal.identity().then(account => {
-                this.account = account;
+        this.eventManager.subscribe('authenticationSuccess', (message) => {
+            this.principal.identity().then((account) => {
+                if (account.authorities.indexOf("ROLE_USER") >=0)
+                {
+                    this.router.navigate(['/student-tests']);
+                }
+                else
+                {
+                    this.account = account;
+                }
             });
         });
     }
