@@ -15,7 +15,7 @@ export class StudentTestsComponent implements OnInit, AfterViewInit  {
   testData : ITests[];
 
   constructor(private testsService: TestsService) {
-    this.message = 'StudentTestsComponent message';
+    this.message = 'This message is defined in student-tests.component.ts';
   }
 
   ngOnInit() {

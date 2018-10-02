@@ -40,11 +40,14 @@ export class HomeComponent implements OnInit {
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', (message) => {
             this.principal.identity().then((account) => {
-                if (account.authorities.indexOf("ROLE_USER") >=0) {
-                    this.router.navigate(['/student-tests']);
+                console.log(account.authorities + 'HELLO BEST ');
+                if (account.authorities.indexOf("ROLE_ADMIN") >=0) {
+                    this.router.navigate(['']);
                 }
                 else
                 {
+                    this.router.navigate(['/student-tests']);
+
                     this.account = account;
                 }
             });
