@@ -18,6 +18,7 @@
             <th><span>Test Answer</span></th>
             <th><span>Correct</span></th>
             <th><span>Questions</span></th>
+             <th><span>Tests</span></th>
             <th></th>
             </tr>
             </thead>
@@ -26,9 +27,15 @@
 
                 <td>{{answers.testAnswer}}</td>
                 <td>{{answers.correct}}</td>
+
                 <td>
                     <div *ngIf="answers.questions">
                         <a [routerLink]="['../questions', answers.questions?.id, 'view' ]" >{{answers.questions?.testQuestions}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="answers.questions.tests">
+                        <a [routerLink]="['../tests', answers.questions.tests?.id, 'view' ]" >{{answers.questions.tests?.testTitle}}</a>
                     </div>
                 </td>
                 <td class="text-right">

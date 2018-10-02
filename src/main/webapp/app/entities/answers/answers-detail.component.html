@@ -19,6 +19,12 @@
                         <a [routerLink]="['/questions', answers.questions?.id, 'view']">{{answers.questions?.testQuestions}}</a>
                     </div>
                 </dd>
+                <dt><span>Test</span></dt>
+                <dd>
+                    <div *ngIf="answers.questions.tests">
+                        <a [routerLink]="['/tests', answers.questions.tests?.id, 'view']">{{answers.questions.tests?.testTitle}}</a>
+                    </div>
+                </dd>
             </dl>
 
             <button type="submit"

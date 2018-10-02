@@ -2,12 +2,8 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-    display: block;
-    width: 347px;
-    height: 497px;
-    background: url('../../content/images/knowledgebase.jpg') no-repeat center top;
-    background-size: contain;
+.display-4 {
+    color: white;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -30,4 +26,7 @@ Main page styles
 
 .form-group {
     color: #222222;
+}
+.col-md-9 {
+    background: url('../../content/images/owl.png') no-repeat center top;
 }

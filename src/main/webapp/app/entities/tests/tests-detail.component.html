@@ -12,7 +12,12 @@
                 <dt><span>Questions</span></dt>
                 <dd>
                     <tr *ngFor="let questions of questions ;trackBy: trackId">
-
+                        <td>
+                            <div *ngIf="tests.questions">
+                                <a [routerLink]="['../questions', questions.tests?.id, 'view' ]" >{{questions.tests?.testTitle}}</a>
+                            </div>
+                        </td>
+                    </tr>
                 </dd>
             </dl>
 
