@@ -31,8 +31,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         KnowledgeCheckCoreModule,
         KnowledgeCheckHomeModule,
         KnowledgeCheckAccountModule,
-        KnowledgeCheckEntityModule
-        KnowledgeCheckAppStudentTestsModule,
+        KnowledgeCheckEntityModule,
+        KnowledgeCheckAppStudentTestsModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],

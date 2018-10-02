@@ -14,7 +14,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span>ID</span></th>
+
             <th><span>Test Answer</span></th>
             <th><span>Correct</span></th>
             <th><span>Questions</span></th>
@@ -23,12 +23,12 @@
             </thead>
             <tbody>
             <tr *ngFor="let answers of answers ;trackBy: trackId">
-                <td><a [routerLink]="['/answers', answers.id, 'view' ]">{{answers.id}}</a></td>
+
                 <td>{{answers.testAnswer}}</td>
                 <td>{{answers.correct}}</td>
                 <td>
                     <div *ngIf="answers.questions">
-                        <a [routerLink]="['../questions', answers.questions?.id, 'view' ]" >{{answers.questions?.id}}</a>
+                        <a [routerLink]="['../questions', answers.questions?.id, 'view' ]" >{{answers.questions?.testQuestions}}</a>
                     </div>
                 </td>
                 <td class="text-right">
