@@ -1,39 +1,16 @@
 
 <!--<h6 class="text-right">{{message}}</h6>-->
 
-
-<!--<div class="row">-->
-    <!---->
-    <!--<table>-->
-
-        <!--<ng-container *ngFor="let row of testData">-->
-            <!--<tr *ngFor="let composant of row.questions">-->
-
-                <!--<td> {{ composant.testQuestions}} </td>-->
-
-                <!--<div *ngFor="let composant1 of composant.answers">-->
-
-                    <!--<p> {{composant1.testAnswer}}</p>-->
-
-
-                <!--</div>-->
-
-
-
-            <!--</tr>-->
-            <!--<ng-container>-->
-    <!--</table>-->
-<!--</div>-->
 <div class="row">
 
 
 
     <ng-container *ngFor="let row of testData">
+
         <div>
             <div>
                 {{row.testTitle}}
             </div>
-
 
         <div *ngFor="let composant of row.questions">
 
