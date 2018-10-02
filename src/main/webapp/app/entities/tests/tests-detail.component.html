@@ -5,15 +5,18 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>Test Title</span></dt>
+                <dt><span>Test Title </span></dt>
                 <dd>
                     <span>{{tests.testTitle}}</span>
                 </dd>
-            </dl>
-        <div class ="questView">
-            <h2><span>Questions</span> {{questions.id}}</h2>
+                <dt><span>Questions</span></dt>
+                <dd>
+                    <tr *ngFor="let questions of questions ;trackBy: trackId">
 
-        </div>>
+                </dd>
+            </dl>
+
+
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
