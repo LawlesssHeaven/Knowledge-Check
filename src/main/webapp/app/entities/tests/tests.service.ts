@@ -35,4 +35,8 @@ export class TestsService {
     delete(id: number): Observable<HttpResponse<any>> {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
+
+    returnAll(): Observable<EntityArrayResponseType> {
+        return this.http.get<ITests[]>(`${this.resourceUrl}`, { observe: 'response' });
+    }
 }

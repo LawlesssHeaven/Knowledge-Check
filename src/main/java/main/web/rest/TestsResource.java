@@ -1,6 +1,7 @@
 package main.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import jdk.nashorn.internal.runtime.options.LoggingOption;
 import main.domain.Tests;
 import main.repository.TestsRepository;
 import main.web.rest.errors.BadRequestAlertException;
@@ -84,8 +85,12 @@ public class TestsResource {
     @GetMapping("/tests")
     @Timed
     public List<Tests> getAllTests() {
-        log.debug("REST request to get all Tests");
-        return testsRepository.findAll();
+        List<Tests> tests;
+        log.info(("REST request to get all Tests"));
+       tests = testsRepository.findAll();
+        log.info(String.valueOf(tests));
+
+        return tests;
     }
 
     /**

@@ -6,6 +6,7 @@ import {Principal, Account} from 'app/core';
 import {LoginService} from 'app/core';
 import {Router} from '@angular/router';
 import {StateStorageService} from 'app/core';
+import {HOME_ROUTE} from "app/home/home.route";
 
 // My Imports
 
@@ -39,8 +40,7 @@ export class HomeComponent implements OnInit {
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', (message) => {
             this.principal.identity().then((account) => {
-                if (account.authorities.indexOf("ROLE_USER") >=0)
-                {
+                if (account.authorities.indexOf("ROLE_USER") >=0) {
                     this.router.navigate(['/student-tests']);
                 }
                 else

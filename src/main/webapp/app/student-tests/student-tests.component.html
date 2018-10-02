@@ -2,10 +2,45 @@
   <div class="col-md-1"></div>
   <div class="col-md-10">
     <h6 class="text-right">{{message}}</h6>
-    <h1 class="text-capitalize text-center">Title</h1>
+    <h1 class="text-capitalize text-center">Teachers Tests</h1>
     <h5 class="text-center">Subtitle</h5>
-    <hr/>
-    <p class="text-justify">Content</p>
+
+      <!--<ul>-->
+          <!--<li *ngFor="let item of testData;">-->
+
+               <!--{{item.testTitle}}-->
+
+          <!--<li *ngFor="let question of item.questions;">-->
+
+              <!--{{question.testQuestions}}}-->
+          <!--</li>-->
+
+          <!--</li>-->
+
+
+      <!--</ul>-->
+      <table>
+
+          <ng-container *ngFor="let row of testData">
+              <tr *ngFor="let composant of row.questions">
+
+                  <td> {{ composant.testQuestions}} </td>
+
+                  <div *ngFor="let composant1 of composant.answers">
+
+                      <p> {{composant1.testAnswer}}</p>
+
+
+                  </div>
+
+
+
+              </tr>
+              <ng-container>
+      </table>
+
+
+
   </div>
   <div class="col-md-1"></div>
 </div>
