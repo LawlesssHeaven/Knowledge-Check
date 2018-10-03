@@ -19,7 +19,7 @@
                     <label class="form-control-label" for="field_tests">Tests</label>
                     <select class="form-control" id="field_tests" name="tests" [(ngModel)]="questions.tests" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="testsOption.id === questions.tests?.id ? questions.tests : testsOption" *ngFor="let testsOption of tests; trackBy: trackTestsByTestTitle">{{testsOption.testTitle}}</option>
+                        <option [ngValue]="testsOption.id === questions.tests?.id ? questions.tests : testsOption" *ngFor="let testsOption of tests; trackBy: trackTestsById">{{testsOption.testTitle}}</option>
                     </select>
                 </div>
             </div>

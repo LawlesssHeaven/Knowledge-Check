@@ -1,36 +1,26 @@
 
-<!--<h6 class="text-right">{{message}}</h6>-->
 
-<div class="row">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th><span>Test Title</span></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of testData ;trackBy: trackId">
+            <td>{{row.testTitle}}</td>
+            <td class="buttonStartQuiz">
+                <div class="btnStart">
+                    <button type="submit"
+                            [routerLink]="['/tests', row.id, 'view' ]"
+                            class="btn btn-info btn-sm">
+                        <fa-icon [icon]="'eye'"></fa-icon>
+                        <span class="d-none d-md-inline">View</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
- <p> Special edition </p>
-    <ng-container *ngFor="let row of testData">
-
-        <div>
-            <div>
-                {{row.testTitle}}
-            </div>
-
-        <div *ngFor="let composant of row.questions">
-
-
-            <p> {{ composant.testQuestions}} </p>
-
-
-            <div *ngFor="let composant1 of composant.answers">
-
-
-                <p> {{composant1.testAnswer}}</p>
-
-
-            </div>
-
-
-
-        </div>
-
-
-        </div>
-        <ng-container>
-
-</div>
