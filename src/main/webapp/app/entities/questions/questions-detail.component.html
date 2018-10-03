@@ -1,19 +1,26 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="questions">
-            <h2><span>Questions</span> {{questions.id}}</h2>
+            <h2><span>Questions: </span> {{questions.testQuestions}}
+                <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-answers" [routerLink]="['/answers/new']">
+                    <fa-icon [icon]="'plus'"></fa-icon>
+                    <span >
+            Create new Answers
+            </span>
+                </button>
+            </h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>Test Questions</span></dt>
+                <dt><span>Answers</span></dt>
                 <dd>
-                    <span>{{questions.testQuestions}}</span>
-                </dd>
-                <dt><span>Tests</span></dt>
-                <dd>
-                    <div *ngIf="questions.tests">
-                        <a [routerLink]="['/tests', questions.tests?.id, 'view']">{{questions.tests?.testTitle}}</a>
-                    </div>
+                    <tr *ngFor="let answers of questions.answers;trackBy: trackId">
+                        <td>
+                            <div *ngIf="answers">
+                                <a [routerLink]="['/answers', answers.id, 'view' ]" >{{answers.testAnswer}}</a>
+                            </div>
+                        </td>
+                    </tr>
                 </dd>
             </dl>
 
