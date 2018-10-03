@@ -28,7 +28,7 @@ public class Tests implements Serializable {
     @Column(name = "test_title")
     private String testTitle;
 
-    @OneToMany(mappedBy = "tests")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "tests" , orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Questions> questions = new HashSet<>();
 
@@ -71,6 +71,13 @@ public class Tests implements Serializable {
 
     public Tests removeQuestions(Questions questions) {
         this.questions.remove(questions);
+
+//        private Set<Questions> questions = new HashSet<>();
+
+
+
+
+
         questions.setTests(null);
         return this;
     }

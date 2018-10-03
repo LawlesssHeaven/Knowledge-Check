@@ -33,7 +33,7 @@ public class Questions implements Serializable {
     @JsonIgnoreProperties("questions")
     private Tests tests;
 
-    @OneToMany(mappedBy = "questions")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "questions", orphanRemoval = true)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Answers> answers = new HashSet<>();
 
