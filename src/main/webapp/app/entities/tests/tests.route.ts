@@ -11,6 +11,7 @@ import { TestsDetailComponent } from './tests-detail.component';
 import { TestsUpdateComponent } from './tests-update.component';
 import { TestsDeletePopupComponent } from './tests-delete-dialog.component';
 import { ITests } from 'app/shared/model/tests.model';
+import { TestsViewDetailComponent } from 'app/entities/tests/studentTests-view.component';
 
 @Injectable({ providedIn: 'root' })
 export class TestsResolve implements Resolve<ITests> {
@@ -62,6 +63,18 @@ export const testsRoute: Routes = [
     {
         path: 'tests/:id/edit',
         component: TestsUpdateComponent,
+        resolve: {
+            tests: TestsResolve
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'Tests'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'tests/:id/testView',
+        component: TestsViewDetailComponent,
         resolve: {
             tests: TestsResolve
         },

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><span>Test</span> {{tests.id}}
+</h2>
+<jhi-alert-error></jhi-alert-error>
+<dl class="row-md jh-entity-details">
+    <dd>
+        <tr *ngFor="let questions of tests.questions ;trackBy: trackId">
+            <td>
+                <div *ngIf="tests.questions">
+                    <p> {{questions.testQuestions}}</p>
+                </div>
+    <dt><span>Answers</span></dt>
+    <dd>
+        <tr *ngFor="let answers of questions.answers;trackBy: trackId">
+            <td>
+                <div *ngIf="questions.answers">
+
+                        <input type="radio" name="options" id="option1"> {{answers.testAnswer}}
+
+                </div>
+            </td>
+        </tr>
+    </dd>
+            </td>
+        </tr>
+    </dd>
+
+</dl>
+</dl>
+<label class="btn btn-primary">
+    <p> Submit </p>
+</label>
+</body>
+</html>
+

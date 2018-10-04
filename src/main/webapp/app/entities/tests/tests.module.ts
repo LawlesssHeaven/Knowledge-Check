@@ -5,6 +5,7 @@ import { KnowledgeCheckSharedModule } from 'app/shared';
 import {
     TestsComponent,
     TestsDetailComponent,
+    TestsViewDetailComponent,
     TestsUpdateComponent,
     TestsDeletePopupComponent,
     TestsDeleteDialogComponent,
@@ -16,7 +17,14 @@ const ENTITY_STATES = [...testsRoute, ...testsPopupRoute];
 
 @NgModule({
     imports: [KnowledgeCheckSharedModule, RouterModule.forChild(ENTITY_STATES)],
-    declarations: [TestsComponent, TestsDetailComponent, TestsUpdateComponent, TestsDeleteDialogComponent, TestsDeletePopupComponent],
+    declarations: [
+        TestsComponent,
+        TestsDetailComponent,
+        TestsViewDetailComponent,
+        TestsUpdateComponent,
+        TestsDeleteDialogComponent,
+        TestsDeletePopupComponent
+    ],
     entryComponents: [TestsComponent, TestsUpdateComponent, TestsDeleteDialogComponent, TestsDeletePopupComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
