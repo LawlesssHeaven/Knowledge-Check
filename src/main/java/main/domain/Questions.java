@@ -17,7 +17,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "questions")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+//@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Questions implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -34,7 +34,7 @@ public class Questions implements Serializable {
     private Tests tests;
 
     @OneToMany(mappedBy = "questions" , fetch = FetchType.EAGER ,orphanRemoval = true)
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+//    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Answers> answers = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
