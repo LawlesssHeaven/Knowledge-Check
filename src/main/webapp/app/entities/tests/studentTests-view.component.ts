@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ITests } from 'app/shared/model/tests.model';
+import { TestRequestModel } from 'app/shared/model/testRequest.model';
 
 @Component({
     selector: 'jhi-studentTests-view',
@@ -22,5 +23,12 @@ export class TestsViewDetailComponent implements OnInit {
 
     previousState() {
         window.history.back();
+    }
+
+    onSubmit() {
+        var request = new TestRequestModel(this.tests.id, this.options);
+        console.log('TESTING SUBMIT BUTTON');
+        console.log(this.options);
+        console.log(this.option);
     }
 }
