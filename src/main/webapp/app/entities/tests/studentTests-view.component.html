@@ -23,18 +23,18 @@
             <td>
 
                 <div *ngIf="tests.questions">
-                    <p> {{questions.testQuestions}}</p>
+                    <p class ="font-weight-bold">{{questions.testQuestions}}</p>
                 </div>
-    <dt><span>Answers</span></dt>
+
     <dd>
         <tr *ngFor="let answers of questions.answers;trackBy: trackId">
             <td>
-                <div class = "count">
+
                 <div *ngIf="questions.answers">
 
-                        <input type="radio" name="options" id="option1"> {{answers.testAnswer}}
+                        <input [(ngModel)]="options[questions.id]" [checked]="options[questions.id]" value="{{answers.id}}-{{option.id}}" type="radio" name="option{{questions.id}}" > {{answers.testAnswer}}
 
-                </div>
+
                 </div>
             </td>
         </tr>
@@ -45,7 +45,7 @@
 
 </dl>
 <button class="btn btn-primary">
-    <p> Submit </p>
+    <span> Submit </span>
 </button>
 </body>
 </html>

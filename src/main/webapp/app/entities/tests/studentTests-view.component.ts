@@ -9,6 +9,8 @@ import { ITests } from 'app/shared/model/tests.model';
 })
 export class TestsViewDetailComponent implements OnInit {
     tests: ITests;
+    options: any = [];
+    option: any = [];
 
     constructor(private activatedRoute: ActivatedRoute) {}
 
