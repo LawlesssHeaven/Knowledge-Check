@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            counter-reset: p; /* initialization of counter */
+        }
+        p:before {
+            counter-increment: p; /* identification for counter  */
+            content: "" counter(p) ". "; /* output for counter */
+        }
+    </style>
 </head>
 <body>
 <h2><span>Test</span> {{tests.id}}
@@ -12,6 +21,7 @@
     <dd>
         <tr *ngFor="let questions of tests.questions ;trackBy: trackId">
             <td>
+
                 <div *ngIf="tests.questions">
                     <p> {{questions.testQuestions}}</p>
                 </div>
@@ -19,10 +29,12 @@
     <dd>
         <tr *ngFor="let answers of questions.answers;trackBy: trackId">
             <td>
+                <div class = "count">
                 <div *ngIf="questions.answers">
 
                         <input type="radio" name="options" id="option1"> {{answers.testAnswer}}
 
+                </div>
                 </div>
             </td>
         </tr>
@@ -32,10 +44,9 @@
     </dd>
 
 </dl>
-</dl>
-<label class="btn btn-primary">
+<button class="btn btn-primary">
     <p> Submit </p>
-</label>
+</button>
 </body>
 </html>
 
