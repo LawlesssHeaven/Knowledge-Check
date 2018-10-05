@@ -32,7 +32,7 @@
 
                 <div *ngIf="questions.answers">
 
-                        <input [(ngModel)]="options[questions.id]" [checked]="options[questions.id]" value="{{answers.id}}-{{option.id}}" type="radio" name="option{{questions.id}}" > {{answers.testAnswer}}
+                        <input [(ngModel)]="options[questions.id]" [checked]="options[questions.id]" value="{{answers.id}}" type="radio" name="option{{questions.id}}" > {{answers.testAnswer}}
 
 
                 </div>
@@ -44,7 +44,7 @@
     </dd>
 
 </dl>
-<button class="btn btn-primary">
+<button class="btn btn-primary" (click)="onSubmit()">
     <span> Submit </span>
 </button>
 </body>
