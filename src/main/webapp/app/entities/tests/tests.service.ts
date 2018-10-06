@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
 import { ITests } from 'app/shared/model/tests.model';
+import {TestResponseModel} from "app/shared/model/TestResponseModel";
 
 type EntityResponseType = HttpResponse<ITests>;
 type EntityArrayResponseType = HttpResponse<ITests[]>;
@@ -39,4 +40,5 @@ export class TestsService {
     returnAll(): Observable<EntityArrayResponseType> {
         return this.http.get<ITests[]>(`${this.resourceUrl}`, { observe: 'response' });
     }
+
 }

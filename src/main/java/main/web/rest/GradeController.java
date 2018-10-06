@@ -2,10 +2,14 @@ package main.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import main.domain.Answers;
+import main.domain.TestResults;
 import main.domain.Tests;
+import main.domain.User;
+import main.repository.TestResultsRepository;
 import main.repository.TestsRepository;
 import main.service.TestRequest;
 import main.service.TestResponse;
+import main.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +29,14 @@ import java.util.concurrent.atomic.AtomicReference;
 public class GradeController {
     //@Autowired
     TestsRepository testsRepository;
+    TestResultsRepository testResultsRepository;
+    UserService userService;
     Logger logger = LoggerFactory.getLogger(GradeController.class);
 
-    public GradeController(TestsRepository repository){
-
+    public GradeController(TestsRepository repository, TestResultsRepository testResultsRepository ,UserService userService){
+        this.testResultsRepository = testResultsRepository;
         this.testsRepository = repository;
+        this.userService = userService;
     }
 
     @PostMapping("/rate")
@@ -70,9 +77,15 @@ public class GradeController {
                 });
 
             }
-            // Can add else block to increase incorrect answer count
 
         });
+        Tests tests = new Tests();
+        tests.setId(testRequest.getTestId());
+        User user = new User();
+        user.setId(userService.getUserWithAuthorities().get().getId());
+        TestResults testResults = new TestResults(correctAnswers.get(), wrongAnswers.get(),testRequest.getTestId(),userService.getUserWithAuthorities().get().getId());
+
+        testResultsRepository.save(testResults);
 
 
         return new TestResponse(testRequest.getTestId(), wrongAnswers.get(), correctAnswers.get());
