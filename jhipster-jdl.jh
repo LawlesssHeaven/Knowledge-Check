@@ -16,3 +16,15 @@ relationship OneToMany {
 	Questions{answers} to Answers
 }
 
+entity TestResult {
+	correctAnsw Integer
+    wrongAnsw Integer
+}
+
+relationship ManyToOne {
+	TestResult to User
+}
+
+relationship OneToOne {
+	TestResult to Tests
+}
