@@ -1,3 +1,3 @@
 export class TestRequestModel {
-    constructor(public id?: number, public options?: any) {}
+    constructor(public testId?: number, public answersID?: any) {}
 }
