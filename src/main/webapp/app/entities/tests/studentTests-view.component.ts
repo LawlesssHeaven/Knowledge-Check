@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ITests } from 'app/shared/model/tests.model';
-import {TestRequestModel} from "app/shared/model/testRequest.model";
-import {Observable} from "rxjs";
-import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
-import {IAnswers} from "app/shared/model/answers.model";
-import {StudentTestsService} from "app/entities/tests/studentTests.service";
-import {TestResponseModel} from "app/shared/model/TestResponseModel";
+import { TestRequestModel } from 'app/shared/model/testRequest.model';
+import { Observable } from 'rxjs';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { IAnswers } from 'app/shared/model/answers.model';
+import { StudentTestsService } from 'app/entities/tests/studentTests.service';
+import { TestResponseModel } from 'app/shared/model/TestResponseModel';
 
 @Component({
     selector: 'jhi-studentTests-view',
@@ -17,70 +17,47 @@ export class TestsViewDetailComponent implements OnInit {
     tests: ITests;
     options: any = [];
     option: any = [];
-
-
-    constructor(private activatedRoute: ActivatedRoute , private studentTestsService: StudentTestsService) {}
-
+    constructor(private activatedRoute: ActivatedRoute, private studentTestsService: StudentTestsService) {}
     ngOnInit() {
         this.activatedRoute.data.subscribe(({ tests }) => {
             this.tests = tests;
         });
     }
-
     previousState() {
         window.history.back();
     }
-
-
-
     onSubmit() {
+        var request = new TestRequestModel(this.tests.id, this.cleanArray(this.options));
 
-
-
-        var request  = new TestRequestModel(this.tests.id ,this.cleanArray(this.options));
-
-        console.log("Clean array options "+ request.answersID);
+        console.log('Clean array options ' + request.answersID);
 
         this.subscribeToSaveResponse(this.studentTestsService.create(request));
-
-
     }
 
     cleanArray(actual) {
-
-        var newArray : { [key:string]:string; } = {};
+        var newArray: { [key: string]: string } = {};
 
         for (let key in actual) {
-            let value = actual[key]+"";
+            let value = actual[key] + '';
 
             newArray[key] = value; // String key is fine
         }
-
-
-        console.log("Our new Array"+newArray);
+        console.log('Our new Array' + newArray);
         return newArray;
-
     }
-
-
-
     private subscribeToSaveResponse(result: Observable<HttpResponse<any>>) {
-
         result.subscribe((res: HttpResponse<any>) => this.onSaveSuccess(res), (res: HttpErrorResponse) => this.onSaveError(res));
     }
-
     private onSaveSuccess(res: HttpResponse<any>) {
         var myObject: TestResponseModel;
 
-        myObject = <TestResponseModel> res.body;     // using <>
-        console.log("Wrong count"+myObject.wrongCount);
-        console.log("Correct count"+myObject.correctCount)
+        myObject = <TestResponseModel>res.body; // using <>
+        console.log('Wrong count' + myObject.wrongCount);
+        console.log('Correct count' + myObject.correctCount);
 
-        console.log("On save Success" + res);
-
+        console.log('On save Success' + res);
     }
     private onSaveError(res) {
-        console.log("On save ERRRORRRR" + res);
+        console.log('On save ERRRORRRR' + res);
     }
-
 }
