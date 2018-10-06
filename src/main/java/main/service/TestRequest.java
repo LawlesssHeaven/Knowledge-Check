@@ -7,7 +7,9 @@ public class TestRequest {
     long testId;
     // Integer == QuestionID String == answerID
     Map<Integer, String> answersID;
+    public TestRequest() {
 
+    }
     public TestRequest(long testId, Map<Integer, String> answersID) {
         this.testId = testId;
         this.answersID = answersID;
@@ -28,5 +30,13 @@ public class TestRequest {
 
     public void setAnswersID(Map<Integer, String> answersID) {
         this.answersID = answersID;
+    }
+
+    @Override
+    public String toString() {
+        return "TestRequest{" +
+            "testId=" + testId +
+            ", answersID=" + answersID +
+            '}';
     }
 }
