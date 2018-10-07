@@ -12,6 +12,7 @@ import { TestsUpdateComponent } from './tests-update.component';
 import { TestsDeletePopupComponent } from './tests-delete-dialog.component';
 import { ITests } from 'app/shared/model/tests.model';
 import { TestsViewDetailComponent } from 'app/entities/tests/studentTests-view.component';
+import { StudentTestsTotalDialogPopupComponents } from './studentTests-totalDialog.component';
 
 @Injectable({ providedIn: 'root' })
 export class TestsResolve implements Resolve<ITests> {
@@ -90,6 +91,21 @@ export const testsPopupRoute: Routes = [
     {
         path: 'tests/:id/delete',
         component: TestsDeletePopupComponent,
+        resolve: {
+            tests: TestsResolve
+        },
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'Tests'
+        },
+        canActivate: [UserRouteAccessService],
+        outlet: 'popup'
+    }
+];
+export const testsTotalPopupRoute: Routes = [
+    {
+        path: 'tests/:id/total',
+        component: StudentTestsTotalDialogPopupComponents,
         resolve: {
             tests: TestsResolve
         },

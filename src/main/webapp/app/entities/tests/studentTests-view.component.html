@@ -44,8 +44,12 @@
     </dd>
 
 </dl>
-<button class="btn btn-primary" (click)="onSubmit()">
-    <span> Submit </span>
+<button type="submit"
+        [routerLink]="['/', { outlets: { popup: 'tests/'+ tests.id + '/total'} }]"
+        replaceUrl="true"
+        queryParamsHandling="merge"
+        class="btn btn-info btn-sm" (click)="onSubmit()">
+    <span class="d-none d-md-inline">Submit</span>
 </button>
 </body>
 </html>

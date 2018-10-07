@@ -10,10 +10,13 @@ import {
     TestsDeletePopupComponent,
     TestsDeleteDialogComponent,
     testsRoute,
-    testsPopupRoute
+    testsPopupRoute,
+    testsTotalPopupRoute,
+    StudentTestsTotalDialogPopupComponents,
+    StudentTestsTotalDialogs
 } from './';
 
-const ENTITY_STATES = [...testsRoute, ...testsPopupRoute];
+const ENTITY_STATES = [...testsRoute, ...testsPopupRoute, ...testsTotalPopupRoute];
 
 @NgModule({
     imports: [KnowledgeCheckSharedModule, RouterModule.forChild(ENTITY_STATES)],
@@ -23,9 +26,18 @@ const ENTITY_STATES = [...testsRoute, ...testsPopupRoute];
         TestsViewDetailComponent,
         TestsUpdateComponent,
         TestsDeleteDialogComponent,
-        TestsDeletePopupComponent
+        TestsDeletePopupComponent,
+        StudentTestsTotalDialogPopupComponents,
+        StudentTestsTotalDialogs
     ],
-    entryComponents: [TestsComponent, TestsUpdateComponent, TestsDeleteDialogComponent, TestsDeletePopupComponent],
+    entryComponents: [
+        TestsComponent,
+        TestsUpdateComponent,
+        TestsDeleteDialogComponent,
+        TestsDeletePopupComponent,
+        StudentTestsTotalDialogPopupComponents,
+        StudentTestsTotalDialogs
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class KnowledgeCheckTestsModule {}
