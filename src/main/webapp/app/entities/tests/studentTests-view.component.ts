@@ -15,6 +15,7 @@ import { TestResponseModel } from 'app/shared/model/TestResponseModel';
 })
 export class TestsViewDetailComponent implements OnInit {
     tests: ITests;
+    azaza: {};
     options: any = [];
     option: any = [];
     constructor(private activatedRoute: ActivatedRoute, private studentTestsService: StudentTestsService) {}
@@ -52,6 +53,7 @@ export class TestsViewDetailComponent implements OnInit {
         var myObject: TestResponseModel;
 
         myObject = <TestResponseModel>res.body; // using <>
+        this.azaza = myObject;
         console.log('How many Wrong count' + myObject.wrongCount);
         console.log('How many  Correct count' + myObject.correctCount);
 
