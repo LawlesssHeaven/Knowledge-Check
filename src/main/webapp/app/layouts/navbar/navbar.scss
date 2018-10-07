@@ -8,7 +8,7 @@ Navbar
 }
 
 .jh-navbar {
-    background-color: #353d47;
+    background-color: rgba(214, 72, 60, 0.7);
     padding: 0.2em 1em;
     .profile-image {
         margin: -10px 0px;
@@ -59,7 +59,9 @@ Navbar
     display: inline-block;
     vertical-align: middle;
 }
-
+.navbar-collapse {
+    display: inline;
+}
 /* ==========================================================================
 Logo styles
 ========================================================================== */

@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
     <div class="jh-logo-container float-left">
         <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
@@ -22,14 +24,20 @@
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="student-tests" (click)="collapseNavbar()">
                     <i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+                    <span>
+                    <fa-icon [icon]="'book'"></fa-icon>
                     <span>Student tests</span>
+                        </span>
                 </a>
             </li>
             
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="test-total-result" (click)="collapseNavbar()">
                     <i class="fa fa-hand-spock-o" aria-hidden="true"></i>
-                    <span>Test total-result</span>
+                    <span>
+                         <fa-icon [icon]="'bell'"></fa-icon>
+                        <span>Tests results</span>
+                    </span>
                 </a>
             </li>
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
