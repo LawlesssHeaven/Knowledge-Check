@@ -52,8 +52,8 @@ export class TestsViewDetailComponent implements OnInit {
         var myObject: TestResponseModel;
 
         myObject = <TestResponseModel>res.body; // using <>
-        console.log('Wrong count' + myObject.wrongCount);
-        console.log('Correct count' + myObject.correctCount);
+        console.log('How many Wrong count' + myObject.wrongCount);
+        console.log('How many  Correct count' + myObject.correctCount);
 
         console.log('On save Success' + res);
     }

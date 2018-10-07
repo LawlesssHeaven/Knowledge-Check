@@ -12,7 +12,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "TEST_RESULT")
 //@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class TestResults implements Serializable {
+public class
+TestResults implements Serializable {
     public TestResults(Integer correctAnswer, Integer wrongAnswer, long tests, long user) {
         this.correctAnswer = correctAnswer;
         this.wrongAnswer = wrongAnswer;
