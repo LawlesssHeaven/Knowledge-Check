@@ -19,6 +19,7 @@ import { KnowledgeCheckAccountModule } from './account/account.module';
 import { KnowledgeCheckEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 import { KnowledgeCheckAppStudentTestsModule } from './student-tests/student-tests.module';
+import { KnowledgeCheckAppTestTotalResultModule } from './test-total-result/test-total-result.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 
@@ -32,7 +33,9 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         KnowledgeCheckHomeModule,
         KnowledgeCheckAccountModule,
         KnowledgeCheckEntityModule,
-        KnowledgeCheckAppStudentTestsModule
+        KnowledgeCheckAppStudentTestsModule,
+
+        KnowledgeCheckAppTestTotalResultModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
