@@ -5,7 +5,7 @@ Main page styles
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 
 .row {
-    height: 900px;
+    height: 800px;
     font-family: 'Open Sans', sans-serif;
     background: #092756;
     background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104, 128, 138, 0.4) 10%, rgba(138, 114, 76, 0) 40%),
@@ -68,7 +68,7 @@ Main page styles
 .btn.active,
 .btn.disabled,
 .btn[disabled] {
-    background-color: #e6e6e6;
+    background-color: #ff8468;
 }
 .btn-large {
     padding: 9px 14px;
@@ -81,7 +81,7 @@ Main page styles
 .btn:hover {
     color: #333333;
     text-decoration: none;
-    background-color: #e6e6e6;
+    background-color: #ff8468;
     background-position: 0 -15px;
     -webkit-transition: background-position 0.1s linear;
     -moz-transition: background-position 0.1s linear;
@@ -98,16 +98,16 @@ Main page styles
     color: rgba(255, 255, 255, 0.75);
 }
 .btn-primary {
-    background-color: #4a77d4;
-    background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4);
-    background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4));
-    background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4);
-    background-image: -o-linear-gradient(top, #6eb6de, #4a77d4);
-    background-image: linear-gradient(top, #6eb6de, #4a77d4);
+    background-color: #ff6550;
+    background-image: -moz-linear-gradient(top, #ff8468, #ff6550);
+    background-image: -ms-linear-gradient(top, #ff8468, #ff6550);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff8468), to(#ff6550));
+    background-image: -webkit-linear-gradient(top, #ff8468, #ff6550);
+    background-image: -o-linear-gradient(top, #ff8468, #ff6550);
+    background-image: linear-gradient(top, #ff8468, #ff6550);
     background-repeat: repeat-x;
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);
-    border: 1px solid #3762bc;
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ff8468, endColorstr=#ff6550, GradientType=0);
+    border: 1px solid #ff6555;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
 }
@@ -117,7 +117,7 @@ Main page styles
 .btn-primary.disabled,
 .btn-primary[disabled] {
     filter: none;
-    background-color: #4a77d4;
+    background-color: #ff6550;
 }
 .btn-block {
     width: 100%;
@@ -133,13 +133,13 @@ Main page styles
 }
 .login {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     margin: -150px 0 0 -150px;
     width: 300px;
     height: 300px;
 }
-.login h1 {
+.login {
     color: #fff;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
