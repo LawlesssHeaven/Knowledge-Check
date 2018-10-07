@@ -4,8 +4,8 @@
 <div *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER']">
     <router-outlet name="navbar"></router-outlet>
 </div>
-<div class="container-fluid">
-    <div class="card jh-card">
+<div class="container-fluid" style="padding: 0">
+    <div class="card jh-card" style="padding: 0">
         <router-outlet></router-outlet>
         <router-outlet name="popup"></router-outlet>
     </div>
