@@ -34,18 +34,18 @@
                 <div *ngIf="questions.answers">
 
                     <input
-                        [(ngModel)]="option[questions.id]"
-                        (click)="couterMethod()"
+                        [(ngModel)]="options[questions.id]"
                         value="{{answers.id}}"
                         type="radio"
-                        name="option{{questions.id}}" >
+                        name="option{{questions.id}}"
+                        (click)="couterMethod()">
 
 
-                            {{answers.testAnswer}}
+                    {{answers.testAnswer}}
                     <span class="text-success" *ngIf="showSmth && answers.correct">
                         correct
                     </span>
-                    <span class="text-info" *ngIf="showSmth && answers.id == option[questions.id]">
+                    <span class="text-info" *ngIf="showSmth && answers.id == options[questions.id]">
                         chosen
                     </span>
                 </div>
@@ -57,11 +57,6 @@
     </dd>
 
 </dl>
-<th *ngFor="let h of option">
-
-    {{h}}
-    {{counter}}
-</th>
 <button *ngIf="allGood" type="submit"
         class="btn btn-info btn-sm" (click)="onSubmit()">
     <span class="d-none d-md-inline">Submit</span>
@@ -75,8 +70,9 @@
     <div class="alert alert-primary" role="alert">
         Wrong result :{{ copyAnswer.wrongCount }} <br>
         Correct result :{{ copyAnswer.correctCount }} <br>
-        Total result :{{ copyAnswer.correctCount }}/{{ copyAnswer.wrongCount + copyAnswer.correctCount }}
+        Total result :{{ copyAnswer.correctCount }}/{{ copyAnswer.wrongCount + copyAnswer.correctCount }} <br>
         Mark: {{ (copyAnswer.correctCount /(copyAnswer.wrongCount + copyAnswer.correctCount))*10}}
+
     </div>
 
 </div>
