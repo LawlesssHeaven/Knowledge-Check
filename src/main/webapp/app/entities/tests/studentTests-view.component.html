@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
@@ -32,9 +33,20 @@
 
                 <div *ngIf="questions.answers">
 
-                    <input [(ngModel)]="options[questions.id]" [checked]="options[questions.id]" value="{{answers.id}}" type="radio" name="option{{questions.id}}" > {{answers.testAnswer}}
+                    <input
+                        [(ngModel)]="options[questions.id]"
+                        value="{{answers.id}}"
+                        type="radio"
+                        name="option{{questions.id}}" >
 
 
+                            {{answers.testAnswer}}
+                    <span class="text-success" *ngIf="showSmth && answers.correct">
+                        correct
+                    </span>
+                    <span class="text-info" *ngIf="showSmth && answers.id == options[questions.id]">
+                        chosen
+                    </span>
                 </div>
             </td>
         </tr>
@@ -44,18 +56,22 @@
     </dd>
 
 </dl>
-<button type="submit"
-        [routerLink]="['/', { outlets: { popup: 'tests/'+ tests.id + '/total'} }]"
-        replaceUrl="true"
-        queryParamsHandling="merge"
+
+<button *ngIf="allGood" type="submit"
         class="btn btn-info btn-sm" (click)="onSubmit()">
-    <span class="d-none d-md-inline">Submit</span>
+    <span>Submit</span>
 </button>
-<div class="alert alert-primary" role="alert">
-    Wrong result :{{ azaza.wrongCount }}
-</div>
-<div class="alert alert-primary" role="alert">
-   Correct result :{{ azaza.correctCount }}
+<button *ngIf="!allGood" type="submit" disabled>
+    <span>Submit</span>
+</button>
+<br>
+<div *ngIf="showSmth">
+    <div class="alert alert-primary" role="alert">
+        Wrong result :{{ copyAnswer.wrongCount }} <br>
+        Correct result :{{ copyAnswer.correctCount }} <br>
+        Total result :{{ copyAnswer.correctCount }}/{{ copyAnswer.wrongCount + copyAnswer.correctCount }}
+    </div>
+
 </div>
 </body>
 </html>

@@ -6,7 +6,6 @@ import { JhiEventManager } from 'ng-jhipster';
 
 import { ITests } from 'app/shared/model/tests.model';
 import { TestsService } from './tests.service';
-import { TestResponseModel } from 'app/shared/model/TestResponseModel';
 
 @Component({
     selector: 'jhi-studentTests-totalDialog',
@@ -34,6 +33,7 @@ export class StudentTestsTotalDialogs {
 
 @Component({
     selector: 'jhi-tests-total-popup',
+
     template: ''
 })
 export class StudentTestsTotalDialogPopupComponents implements OnInit {

@@ -15,7 +15,9 @@ import { TestResponseModel } from 'app/shared/model/TestResponseModel';
 })
 export class TestsViewDetailComponent implements OnInit {
     tests: ITests;
-    azaza: {};
+    showSmth: boolean = false;
+    allGood: boolean = false;
+    copyAnswer: {};
     options: any = [];
     option: any = [];
     constructor(private activatedRoute: ActivatedRoute, private studentTestsService: StudentTestsService) {}
@@ -24,6 +26,12 @@ export class TestsViewDetailComponent implements OnInit {
             this.tests = tests;
         });
     }
+    ngDoCheck() {
+        let optionsLength = this.options.length - 1;
+        let questionLength = this.tests.questions.length;
+        this.allGood = optionsLength == questionLength;
+    }
+
     previousState() {
         window.history.back();
     }
@@ -46,14 +54,15 @@ export class TestsViewDetailComponent implements OnInit {
         console.log('Our new Array' + newArray);
         return newArray;
     }
-    private subscribeToSaveResponse(result: Observable<HttpResponse<any>>) {
+    public subscribeToSaveResponse(result: Observable<HttpResponse<any>>) {
         result.subscribe((res: HttpResponse<any>) => this.onSaveSuccess(res), (res: HttpErrorResponse) => this.onSaveError(res));
     }
-    private onSaveSuccess(res: HttpResponse<any>) {
+    public onSaveSuccess(res: HttpResponse<any>) {
         var myObject: TestResponseModel;
 
         myObject = <TestResponseModel>res.body; // using <>
-        this.azaza = myObject;
+        this.copyAnswer = myObject;
+        this.showSmth = true;
         console.log('How many Wrong count' + myObject.wrongCount);
         console.log('How many  Correct count' + myObject.correctCount);
 
