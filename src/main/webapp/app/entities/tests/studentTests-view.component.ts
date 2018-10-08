@@ -20,14 +20,18 @@ export class TestsViewDetailComponent implements OnInit {
     copyAnswer: {};
     options: any = [];
     option: any = [];
+    counter = 0;
     constructor(private activatedRoute: ActivatedRoute, private studentTestsService: StudentTestsService) {}
     ngOnInit() {
         this.activatedRoute.data.subscribe(({ tests }) => {
             this.tests = tests;
         });
     }
+    couterMethod() {
+        this.counter++;
+    }
     ngDoCheck() {
-        let optionsLength = this.options.length - 1;
+        let optionsLength = this.counter;
         let questionLength = this.tests.questions.length;
         this.allGood = optionsLength == questionLength;
     }
