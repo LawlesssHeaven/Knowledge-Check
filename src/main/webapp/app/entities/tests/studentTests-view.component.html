@@ -15,6 +15,9 @@
     </style>
 </head>
 <body>
+<div class="container">
+<div class="col-sm-8 blog-main">
+<br>
 <h2 class="blog-post-title">{{tests.testTitle}}
 </h2>
 <jhi-alert-error></jhi-alert-error>
@@ -61,6 +64,7 @@
         class="btn btn-info btn-sm" (click)="onSubmit()">
     <span class="d-none d-md-inline">Submit</span>
 </button>
+    <br>
 <button *ngIf="!allGood" type="submit" disabled>
     <span>Submit</span>
 </button>
@@ -68,7 +72,7 @@
 <br>
 <div *ngIf="showSmth">
     <div class="alert alert-primary" role="alert">
-        Wrong result :{{ copyAnswer.wrongCount }} <br>
+        Wrong result :{{ copyAnswer.c }} <br>
         Correct result :{{ copyAnswer.correctCount }} <br>
         Total result :{{ copyAnswer.correctCount }}/{{ copyAnswer.wrongCount + copyAnswer.correctCount }} <br>
         Mark: {{ (copyAnswer.correctCount /(copyAnswer.wrongCount + copyAnswer.correctCount))*10}}
@@ -76,5 +80,9 @@
     </div>
 
 </div>
+    <br>
+</div>
+</div>
+
 </body>
 </html>

@@ -31,6 +31,7 @@ public class GradeController {
     TestsRepository testsRepository;
     TestResultsRepository testResultsRepository;
     UserService userService;
+
     Logger logger = LoggerFactory.getLogger(GradeController.class);
 
     public GradeController(TestsRepository repository, TestResultsRepository testResultsRepository ,UserService userService){

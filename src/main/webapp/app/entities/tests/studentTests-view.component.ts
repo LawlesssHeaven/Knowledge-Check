@@ -75,4 +75,7 @@ export class TestsViewDetailComponent implements OnInit {
     private onSaveError(res) {
         console.log('On save ERRRORRRR' + res);
     }
+
+
+
 }
