@@ -1,5 +1,31 @@
 # KnowledgeCheck
 This application was generated using JHipster 5.3.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.3.4](https://www.jhipster.tech/documentation-archive/v5.3.4).
+It's main purpose is student knowledge testing, teaccher can create edit and check results of tests.
+All data is stored localy using H2 database
+You are free to use this code for your project just don't forget to star this project and leave reference in your projects description ! 
+
+This application has got few sections:
+Student tests
+Tests results
+Entities
+Administration
+Account
+
+Student tests: Here you can find all crated tests , this is also location to go to if you want to complete one of them. This is also only section that can be seen by regular User
+
+Tests results: This location you can see all test results from all users
+
+Entities: On click you will see small dropdown menu containing tests,questions and answers
+
+Test section is responsible for creating , editing and deleting tests
+
+Question section is responsible for creating , editing and deleting questions for tests
+
+Answer section is responsible for creating , editing and deleting answers for tests and questions
+
+Administration: In this section you will mainly need user management section , there you will be available to create ,edit and delete existing users
+
+Account: In this section you can edit you account information such as name , surname , email and password. Regular users don't have this section activated
 
 ## Development
 
