@@ -1,7 +1,9 @@
 # KnowledgeCheck
 This application was generated using JHipster 5.3.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.3.4](https://www.jhipster.tech/documentation-archive/v5.3.4).
+
 It's main purpose is student knowledge testing, teaccher can create edit and check results of tests.
 All data is stored localy using H2 database
+
 You are free to use this code for your project just don't forget to star this project and leave reference in your projects description ! 
 
 This application has got few sections:
